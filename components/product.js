@@ -2,9 +2,10 @@ import Link from "next/link";
 import style from "../styles/product.module.css";
 import { convertToPath } from "@/lib/utils";
 import CartButton from "./cartButton";
-import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Product({ item, showAs, qty }) {
+  const { asPath, locale, locales } = useRouter();
   if (showAs === "Page") {
     return (
       <div className={style.page}>

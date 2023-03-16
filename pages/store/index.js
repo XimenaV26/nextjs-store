@@ -3,8 +3,14 @@ import { getItems } from "@/services/itemService";
 import Product from "@/components/product";
 import style from "../../styles/product.module.css";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import en from "@/en";
+import es from "@/es";
 
 export default function Index({ items }) {
+  const { asPath, locale, locales } = useRouter();
+  const t = locale === "en" ? en : es;
+
   let keywords = "";
 
   items.map((product) => {
@@ -21,7 +27,7 @@ export default function Index({ items }) {
         <meta name="keywords" content={keywords} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className={style.h2}>Store</h1>
+      <h1 className={style.h2}>{t.store.title}</h1>
       <div className={style.items}>
         {items &&
           items.map((item) => (

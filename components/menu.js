@@ -1,8 +1,15 @@
 import Link from "next/link";
 import style from "../styles/menu.module.css";
 import { useAppContext } from "./stateWrapper";
+import { useRouter } from "next/router";
+import en from "@/en";
+import es from "@/es";
+import Selector from "./selector";
 
 export default function Menu() {
+  const { asPath, locale, locales } = useRouter();
+  const t = locale === "en" ? en : es;
+
   const cart = useAppContext();
   function handleOpenCart() {
     cart.openCart();
@@ -11,20 +18,23 @@ export default function Menu() {
   return (
     <nav className={style.menu}>
       <div>
+        <Selector />
+      </div>
+      <div>
         <Link className={style.link} href="/">
-          Home
+          {t.menu.home}
         </Link>
         <Link className={style.link} href="/store">
-          Store
+          {t.menu.store}
         </Link>
         <Link className={style.link} href="/faq">
-          FAQ
+          {t.menu.faq}
         </Link>
       </div>
       <div>
         <a className={style.link} onClick={handleOpenCart} href="#">
           {" "}
-          Cart ({cart.getNumberOfItems()})
+          {t.menu.cart} ({cart.getNumberOfItems()})
         </a>
       </div>
     </nav>

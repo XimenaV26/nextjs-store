@@ -7,10 +7,16 @@ import Product from "@/components/product";
 import styleProduct from "../styles/product.module.css";
 import { getLimitItems } from "@/services/itemService";
 import style from "../styles/Home.module.css";
+import { useRouter } from "next/router";
+import en from "@/en";
+import es from "@/es";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ items }) {
+  const { asPath, locale, locales } = useRouter();
+  const t = locale === "en" ? en : es;
+
   return (
     <Layout title="Home">
       <div className={style.banner}>
@@ -18,7 +24,7 @@ export default function Home({ items }) {
           <div className={style.bannerInfo}></div>
         </div>
       </div>
-      <h2 className={style.h2}>Latest Products</h2>
+      <h2 className={style.h2}>{t.home.title}</h2>
       <div className={styleProduct.items}>
         {items &&
           items.map((item) => (

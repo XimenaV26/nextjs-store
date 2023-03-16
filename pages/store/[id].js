@@ -18,8 +18,7 @@ export default function ProductPage({ productInfo }) {
 
 //Funcion que permite generar las rutas dinamicas para cada elemento
 export async function getStaticPaths() {
-  //Mandamos a llamar a la funcion creada en utils.js
-  const paths = await getPathsFromIds();
+  const paths = await getPathsFromIds(); //Mandamos a llamar a la funcion creada en utils.js
 
   //Devolvemos el arreglo de objetos para utilizarlo como prop
   //El nombre de la propiedad debe ser paths.
