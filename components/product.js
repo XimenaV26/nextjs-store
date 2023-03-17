@@ -59,7 +59,7 @@ export default function Product({ item, showAs, qty }) {
   return (
     <div className={style.item}>
       <div>
-        <Link href={`/store/${convertToPath(item.title)}`}>
+        <Link href={`/store/${convertToPath(item.title)}`} locale={locale}>
           <img
             src={item.image}
             alt={item.description}
@@ -70,7 +70,9 @@ export default function Product({ item, showAs, qty }) {
       </div>
       <div>
         <h3>
-          <Link href={`/store/${convertToPath(item.title)}`}>{item.title}</Link>
+          <Link href={`/store/${convertToPath(item.title)}`} locale={locale}>
+            {item.title}
+          </Link>
         </h3>
       </div>
 

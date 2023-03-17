@@ -18,7 +18,7 @@ export default function Home({ items }) {
   const t = locale === "en" ? en : es;
 
   return (
-    <Layout title="Home">
+    <Layout title={`${t.seo.titleH}`}>
       <div className={style.banner}>
         <div className={style.bannerBackground}>
           <div className={style.bannerInfo}></div>

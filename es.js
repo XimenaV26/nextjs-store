@@ -20,4 +20,10 @@ export default {
   fqa: {
     fqa: "Preguntas y respuestas",
   },
+  seo: {
+    titleS: "Tienda",
+    titleH: "Inicio",
+    titleF: "Preguntas y respuestas",
+    des: "Tienda con merch de Next J",
+  },
 };

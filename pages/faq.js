@@ -9,7 +9,7 @@ export default function FAQ() {
   const t = locale === "en" ? en : es;
 
   return (
-    <Layout title="FAQ">
+    <Layout title={`${t.seo.titleF}`}>
       <h1>{t.fqa.fqa}</h1>
     </Layout>
   );

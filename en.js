@@ -20,4 +20,10 @@ export default {
   fqa: {
     fqa: "FQA",
   },
+  seo: {
+    titleS: "Store",
+    titleH: "Home",
+    titleF: "FQA",
+    des: "Store with Next merch",
+  },
 };

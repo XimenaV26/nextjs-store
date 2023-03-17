@@ -20,9 +20,8 @@ export default function Index({ items }) {
   console.log(":::m", keywords);
 
   return (
-    <Layout title="Store">
+    <Layout title={`${t.seo.titleS}`}>
       <Head>
-        <meta name="description" content="Store" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content={keywords} />
         <link rel="icon" href="/favicon.ico" />
